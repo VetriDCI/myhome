@@ -1,0 +1,4 @@
+import {supabase} from "../lib/supabase";
+export async function searchCreators(term){const {data,error}=await supabase.from("profiles").select("id,username,display_name,avatar_url,bio,followers_count").ilike("username",`%${term}%`).limit(20);if(error)throw error;return data||[]}
+export async function updateProfile(id,values){const {error}=await supabase.from("profiles").update(values).eq("id",id);if(error)throw error}
+export async function toggleFollow(followerId,followingId,following){if(following){const {error}=await supabase.from("follows").delete().eq("follower_id",followerId).eq("following_id",followingId);if(error)throw error;return false}const {error}=await supabase.from("follows").insert({follower_id:followerId,following_id:followingId});if(error)throw error;return true}
