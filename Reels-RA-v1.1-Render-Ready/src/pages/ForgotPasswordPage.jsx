@@ -1,1 +1,0 @@
-import{Link}from"react-router-dom";export default function Forgot(){return <main className="auth"><div><h1>Forgot password?</h1><p>Use Supabase reset email configuration to restore account access.</p><Link to="/login">Back to login</Link></div></main>}

@@ -1,1 +1,0 @@
-import{Link}from"react-router-dom";export default function Home(){return <main className="auth"><div><h1>Welcome to Reels RA</h1><Link className="button" to="/feed">Open feed</Link></div></main>}

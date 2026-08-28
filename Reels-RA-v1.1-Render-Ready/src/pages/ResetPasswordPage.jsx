@@ -1,1 +1,0 @@
-import{Link}from"react-router-dom";export default function Reset(){return <main className="auth"><div><h1>Reset password</h1><p>Open this page from the reset link sent by Supabase.</p><Link to="/login">Back to login</Link></div></main>}
